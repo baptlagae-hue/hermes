@@ -97,11 +97,17 @@ Il ira directement fouiller dans `~/hermes-workspace/projects/`, `specs/`, etc.
 
 Ces apps sont accessibles via le navigateur, sans SSH tunnel :
 
-| App | URL | Description |
-|-----|-----|-------------|
-| Slide Generator | `http://2.24.11.116:8012` | Générateur de .pptx depuis template + plan + contenu |
+| App | URL | Description | Persistance |
+|-----|-----|-------------|-------------|
+| Slide Generator | `http://2.24.11.116:8012` | Générateur de .pptx depuis template + plan + contenu | ❌ Aucune — fichiers temporaires |
+| Expertise Engine (hermes-xp) | `http://2.24.11.116:8011` | Capture d'expertise → spec technique par interview vocale | ❌ Aucune — sessions en mémoire RAM |
 
-**Sécurité :** le Dashboard Hermes (9119), l'Expertise Engine (8010/8011) ne sont pas exposés — uniquement accessibles via tunnel SSH.
+**⚠️ Persistance :** aucune des apps exposées ne conserve tes données.
+- **Slide Generator** : les fichiers uploadés et le .pptx généré sont supprimés au redémarrage du service
+- **Expertise Engine** : les sessions (transcriptions, réponses, specs) sont stockées en RAM — perdues si le service redémarre
+- Si tu veux sauvegarder un résultat, télécharge-le ou copie-le avant
+
+**Sécurité :** Dashboard Hermes (9119) non exposé — tunnel SSH uniquement. UFW bloque tout sauf SSH (22), Slide Generator (8012), Expertise Engine (8010/8011).
 
 ---
 

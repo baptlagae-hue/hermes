@@ -15,7 +15,7 @@ interface SpecSection {
 }
 
 // ---- API Client ----
-const API_BASE = "http://127.0.0.1:8010";
+const API_BASE = "http://2.24.11.116:8010";
 const API = API_BASE;
 
 async function uploadAudio(blob: Blob) {
