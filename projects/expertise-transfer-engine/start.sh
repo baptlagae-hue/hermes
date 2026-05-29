@@ -4,8 +4,8 @@
 set -a
 source /root/.hermes/.env
 set +a
-
-cd /root/expertise-transfer-engine
+PROJECT_ROOT="/root/expertise-transfer-engine/projects/expertise-transfer-engine"
+cd "$PROJECT_ROOT" || { echo "ERROR: cannot cd to $PROJECT_ROOT"; exit 1; }
 
 # Start frontend server in background
 python3 -m http.server 8011 --bind 127.0.0.1 --directory frontend/dist &

@@ -1,6 +1,6 @@
 # 🗺️ Fiche récap — Interagir avec Hermes
 
-> Dernière mise à jour : 2026-05-29
+> Dernière mise à jour : 2026-05-29 (v2 — ajout Slide Generator web app)
 > Ce fichier évolue au fil des améliorations. Reviens vérifier les nouvelles sections.
 
 ---
@@ -66,7 +66,8 @@ Tout le code et les travaux sont structurés dans le repo GitHub unique :
 ```
 hermes-workspace/
 ├── projects/          ← Code source complet de chaque projet
-│   └── expertise-transfer-engine/
+│   ├── expertise-transfer-engine/
+│   └── slide-generator/      ← App web exposée : http://2.24.11.116:8012
 ├── specs/             ← Spécifications techniques générées
 ├── prompts/           ← Prompts prêts à l'emploi
 ├── reports/           ← Audits, recherches, recommandations
@@ -89,6 +90,18 @@ Claude Code a accès à ce même repo. Tu peux lui demander :
 > *« Va chercher le travail qu'Hermes a fait sur [sujet] dans le repo hermes-workspace »*
 
 Il ira directement fouiller dans `~/hermes-workspace/projects/`, `specs/`, etc.
+
+---
+
+## 5. 🌐 Apps exposées (accessibles depuis n'importe où)
+
+Ces apps sont accessibles via le navigateur, sans SSH tunnel :
+
+| App | URL | Description |
+|-----|-----|-------------|
+| Slide Generator | `http://2.24.11.116:8012` | Générateur de .pptx depuis template + plan + contenu |
+
+**Sécurité :** le Dashboard Hermes (9119), l'Expertise Engine (8010/8011) ne sont pas exposés — uniquement accessibles via tunnel SSH.
 
 ---
 

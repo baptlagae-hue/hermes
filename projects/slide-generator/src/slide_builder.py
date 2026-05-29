@@ -11,10 +11,10 @@ from typing import Optional
 from pptx import Presentation
 from pptx.util import Inches, Pt, Emu
 
-from .template_parser import parse_template, TemplateDNA
-from .plan_parser import Plan, SlideEntry
-from .content_parser import Content, SlideContent
-from .renderers.slides import (
+from template_parser import parse_template, TemplateDNA
+from plan_parser import Plan, SlideEntry
+from content_parser import Content, SlideContent
+from renderers.slides import (
     render_title_slide,
     render_section_slide,
     render_content_slide,
