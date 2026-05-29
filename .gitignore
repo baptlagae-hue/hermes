@@ -5,5 +5,6 @@ __pycache__/
 *.tsbuildinfo
 uploads/
 .env
+.gitignore
 start_server.py
 start_server.sh
